@@ -16,6 +16,11 @@ public class Prompter {
         String guessInput = scanner.nextLine();
         char guess = guessInput.charAt(0);
 
-        return isHit;
+        return game.applyGuess(guess);
+    }
+
+    public void displayProgress(){
+        System.out.printf("You have %d tries left to solve: %s %n", game.getRemainingTries(),
+                game.getCurrentProgress());
     }
 }

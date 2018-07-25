@@ -8,6 +8,9 @@ public class Main {
         Game game = new Game("Flash");
         Prompter prompter = new Prompter(game);
 
-        System.out.println(game.getAnswer());
+        while (game.getRemainingTries() > 0){
+            prompter.displayProgress();
+            prompter.promptForGuess();
+        }
     }
 }
